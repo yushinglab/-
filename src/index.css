@@ -9,6 +9,24 @@
     @apply bg-[#f8f9fa] text-gray-900 antialiased;
   }
 
+  @media print {
+    header, aside, .absolute.bottom-6, .absolute.-bottom-10, .absolute.top-full, button {
+      display: none !important;
+    }
+    .canvas-container {
+      position: static !important;
+      overflow: visible !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+    .canvas-container > div {
+      transform: scale(1) !important;
+      position: static !important;
+      min-width: unset !important;
+      min-height: unset !important;
+    }
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;

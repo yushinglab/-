@@ -14,6 +14,10 @@ export interface Table {
   seatsCount: number;
   x: number;
   y: number;
+  radius?: number; // For round tables
+  width?: number;  // For long tables
+  height?: number; // For long tables
+  color?: string;
 }
 
 export interface Stage {
@@ -24,6 +28,27 @@ export interface Stage {
   y: number;
   width: number;
   height: number;
+  color?: string;
 }
 
-export type ViewMode = 'seating' | 'table';
+export interface Project {
+  id: string;
+  name: string;
+  remarks?: string;
+  templateId?: string;
+  createdAt: string;
+}
+
+export interface Template {
+  id: string;
+  name: string;
+  description: string;
+  thumbnail?: string;
+  tablesCount: number;
+  seatsPerTable: number;
+  hasStage: boolean;
+  isPublic: boolean;
+  hotCount: number;
+}
+
+export type ViewMode = 'seating' | 'table' | 'setup';
